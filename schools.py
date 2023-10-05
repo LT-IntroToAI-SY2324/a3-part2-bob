@@ -1,4 +1,5 @@
 # The database of schools
+# The data is of 2021
 school_db = [
     #School name
     #location
