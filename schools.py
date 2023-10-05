@@ -1,6 +1,10 @@
 # The database of schools
 school_db = [
-    # Ivy League Schools
+    #School name
+    #location
+    #year founded
+    # undergrad class size
+    # acceptance rate
     (
         "Harvard University",
         "Cambridge, Massachusetts, USA",
