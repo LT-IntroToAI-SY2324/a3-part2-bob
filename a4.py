@@ -1,17 +1,4 @@
 def schools_by_year(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year range
-
-    Args:
-        matches - a list of 2 strings, the year beginning the range and the year ending
-            the range. For example, to get movies from 1991-1994 matches would look like
-            this - ["1991", "1994"] Note that these years are passed as strings and
-            should be converted to ints.
-
-    Returns:
-        a list of movie titles made during those years, inclusive (meaning if you pass
-        in ["1991", "1994"] you will get movies made in 1991, 1992, 1993 & 1994)
-    """
-def schools_by_year(matches: List[str]) -> List[str]:
 def schools_by_year_range(matches: List[str]) -> List[str]:
 def schools_before_year(matches: List[str]) -> List[str]:
 def schools_after_year(matches: List[str]) -> List[str]:
