@@ -1,3 +1,71 @@
+from schools import schools_db
+from match import match
+from typing import List, Tuple, Callable, Any
+
+def get_name(school: Tuple[str, str, int, int]) -> str:
+    return school[0]
+def get_location(movie: Tuple[str, str, int, int]) -> str:
+    return school[1]
+def get_year(movie: Tuple[str, str, int, int]) -> int:
+    return school[2]
+def get_size(movie: Tuple[str, str, int, int]) -> int:
+    return school[3]
+def get_rate(movie: Tuple[str, str, int, int]) -> int:
+    return school[4]
+def schools_by_year(matches: List[str]) -> List[str]:
+    results = []
+    for school in school_db:
+        if int(matches[0]) == get_year(school):
+            results.append(get_name(school))
+            return results
+def schools_by_year_range(matches: List[str]) -> List[str]:
+    results = []
+    for school in school_db:
+        if int(matches[0]) <= get_year(school):
+            results.append(get_name(school))
+            return results
+def schools_before_year(matches: List[str]) -> List[str]:
+    results = []
+    for school in school_db:
+        if get_year(school)< int(matches[0]):
+            results.append(get_name(school))
+            return results
+def schools_after_year(matches: List[str]) -> List[str]:
+    results = []
+    for school in school_db:
+        if get_year(school)< int(matches[0]):
+            results.append(get_name(school))
+            return results
+
+
+def schools_by_rate_higher(matches: List[str]) -> List[str]:
+    results=[]
+    for school in school_db:
+        if get_rate(school)>int(matches[0]):
+            results.append(get_name(school))
+    return results
+def schools_by_rate_lower(matches: List[str]) -> List[str]:
+    results=[]
+    for school in school_db:
+        if get_rate(school)<int(matches[0]):
+            results.append(get_name(school))
+def schools_by_rate_range(matches: List[str]) -> List[str]:
+    results=[]
+    for school in school_db:
+        if int(matches[0])<= get_rate(school)<=int(matches[1]):
+            results.append(get_name(school))
+    return results
+def schools_by_size_bigger(matches: List[str]) -> List[str]: 
+    results=[]
+    for school in school_db:
+        if get_size(school)>int(matches[0]):
+            results.append(get_name(school))
+    return results
+
+
+
+
+
 
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what schools were founded in _"), schools_by_year),
@@ -12,11 +80,8 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what schools have class sizes between _ and _"), schools_by_size_range),
 
 
-    (str.split("where is %"), location_by_school),
+
     (str.split("what schools are in %"), schools_by_location),
-    (str.split("what is the acceptance rate of %"), rate_by_school),
-    (str.split("what is the class size of %"), size_by_school),
-    (str.split("what year was % founded"), year_by_school),
     
     
 
