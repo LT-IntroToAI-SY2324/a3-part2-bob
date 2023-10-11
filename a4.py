@@ -2,16 +2,16 @@ from schools import school_db
 from match import match
 from typing import List, Tuple, Callable, Any
 
-def get_name(movie: Tuple[str, str, int, int]) -> str:
-    return school_db[0]
-def get_location(movie: Tuple[str, str, int, int]) -> str:
-    return school_db[1]
-def get_year(movie: Tuple[str, str, int, int]) -> int:
-    return school_db[2]
-def get_size(movie: Tuple[str, str, int, int]) -> int:
-    return school_db[3]
-def get_rate(movie: Tuple[str, str, int, int]) -> int:
-    return school_db[4]
+def get_name(school: Tuple[str, str, int, int]) -> str:
+    return school[0]
+def get_location(school: Tuple[str, str, int, int]) -> str:
+    return school[1]
+def get_year(school: Tuple[str, str, int, int]) -> int:
+    return school[2]
+def get_size(school: Tuple[str, str, int, int]) -> int:
+    return school[3]
+def get_rate(school: Tuple[str, str, int, int]) -> int:
+    return school[4]
 
 def schools_by_year(matches: List[str]) -> List[str]:
     results = []
