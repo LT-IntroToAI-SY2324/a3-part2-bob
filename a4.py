@@ -87,9 +87,36 @@ def schools_by_rate_higher(matches: List[str]) -> List[str]:
 def schools_by_rate_lower(matches: List[str]) -> List[str]:
 def schools_by_rate_range(matches: List[str]) -> List[str]:
 def schools_by_size_bigger(matches: List[str]) -> List[str]:
-def schools_by_size_smaller(matches: List[str]) -> List[str]:
-def schools_by_size_range(matches: List[str]) -> List[str]:
-def schools_by_location(matches: List[str]) -> List[str]:
+def schools_by_size_smaller(matches: List[str]) -> List[str]: #Ewan
+    to_return = []
+    #Iterates through School_db where School is one Schools worth of data
+    for school in school_db:
+        #If the size of the school is less than the first element in matches
+        if (get_size(school) < int(matches[0])):
+            to_return.append(get_name(school))
+    return to_return
+def schools_by_size_range(matches: List[str]) -> List[str]: #Ewan
+    #Includes boths bounds
+    to_return = []
+    # orders matches from smallest to largest
+    if (matches[0] > matches[1]):
+        place_holder = matches[0]
+        matches[0] = matches[1]
+        matches[1] = place_holder
+    #Iterates through School_db where School is one Schools worth of data
+    for school in school_db:
+        #If the size of the school is greater than or equal to the first element in matches and less than or equal to the second element of matches
+        if (get_size(school) >= matches[0] and get_size(school) <= matches[1]):
+            to_return.append(get_name(school))
+    return to_return
+def schools_by_location(matches: List[str]) -> List[str]: #Ewan
+    to_retrun = []
+    #Iterates through School_db where School is one Schools worth of data
+    for school in school_db:
+        #If the location of the school is the same as element 1 of matches
+        if (get_location(school) == matches[0]):
+            to_return.append(get_name(school))
+    return to_retrun
 >>>>>>> 393df6640acbd5f2ef3265464cda560f8eecb20e
 
 
