@@ -167,13 +167,27 @@ if __name__ == "__main__":
     assert isinstance(schools_after_year(["1900"]), list), "schools_after_year not returning a list"
     assert isinstance(schools_by_rate_higher(["20.5"]), list), "schools_by_rate_higher not returning a list"
     assert isinstance(schools_by_rate_lower(["10"]), list), "schools_by_rate_lower not returning a list"
-    assert isinstance(schools_by_rate_range(["4", "60.7"]), list), "schools_by_rate_range not returning a list"
-    assert isinstance(schools_by_size_bigger(["20,000"]), list), "schools_by_size_bigger not returning a list"
-    assert isinstance(schools_by_size_smaller(["30,000"]), list), "schools_by_size_smaller not returning a list"
-    assert isinstance(schools_by_size_range(["10,000", "17,000"]), list), "schools_by_size_range not returning a list"
+    assert isinstance(schools_by_rate_range(["10", "12"]), list), "schools_by_rate_range not returning a list" #megan
+    assert isinstance(schools_by_size_bigger(["40000"]), list), "schools_by_size_bigger not returning a list"
+    assert isinstance(schools_by_size_smaller(["5000"]), list), "schools_by_size_smaller not returning a list"
+    assert isinstance(schools_by_size_range(["5000", "6000"]), list), "schools_by_size_range not returning a list"
     assert isinstance(schools_by_location([ "Norman, Oklahoma, USA"]), list), "schools_by_location not returning a list"
-
-
+    
+    assert sorted (search_pa_list(["what", "schools", "have", "acceptance", "rates", "between", "10", "and","12"])) == sorted(
+        [ "Cornell University", "University of California, Berkely"]
+    ), "failed search_pa_list test 7"
+    assert sorted (search_pa_list(["what", "schools", "have", "class", "sizes", "bigger", "than", "40000"])) == sorted(
+        [ "University of California, Los Angeles (UCLA)"]
+    ), "failed search_pa_list test 8"
+     assert sorted (search_pa_list(["what", "schools", "have", "class", "sizes", "smaller", "than", "_"])) == sorted(
+        ["Massachusetts Institute of Technology (MIT)"]
+    ), "failed search_pa_list test 9"
+     assert sorted (search_pa_list(["what", "schools", "have", "class", "sizes", "between", "_", "and", "_"])) == sorted(
+        [ "Yale University", "Princeton University"]
+    ), "failed search_pa_list test 10"
+     assert sorted (search_pa_list(["what", "schools", "are", "in", "%"])) == sorted(
+        [ "University of Oklahoma"]
+    ), "failed search_pa_list test 11"
     
 
 #School name
