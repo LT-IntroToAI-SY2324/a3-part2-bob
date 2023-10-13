@@ -164,7 +164,7 @@ if __name__ == "__main__":
     assert isinstance(schools_by_year(["1746"]), list), "schools_by_year not returning a list"
     assert isinstance(schools_by_year_range(["1770", "1850"]), list), "schools_by_year_range not returning a list"
     assert isinstance(schools_before_year(["1800"]), list), "schools_before_year not returning a list"
-    assert isinstance(schools_after_year(["1700"]), list), "schools_after_year not returning a list"
+    assert isinstance(schools_after_year(["1900"]), list), "schools_after_year not returning a list"
     assert isinstance(schools_by_rate_higher(["20.5"]), list), "schools_by_rate_higher not returning a list"
     assert isinstance(schools_by_rate_lower(["73.4"]), list), "schools_by_rate_lower not returning a list"
     assert isinstance(schools_by_rate_range(["4", "60.7"]), list), "schools_by_rate_range not returning a list"
