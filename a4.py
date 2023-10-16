@@ -207,6 +207,8 @@ if __name__ == "__main__":
      assert sorted (search_pa_list(["what", "schools", "are", "in", "%"])) == sorted(
         [ "University of Oklahoma"]
     ), "failed search_pa_list test 11"
+
+print("All tests passed!")
     
 
 #School name
