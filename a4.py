@@ -114,9 +114,6 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what schools have class sizes bigger than _"), schools_by_size_bigger),
     (str.split("what schools have class sizes smaller than _"), schools_by_size_smaller),
     (str.split("what schools have class sizes between _ and _"), schools_by_size_range),
-
-
-    (str.split("where is %"), location_by_school),
     (str.split("what schools are in %"), schools_by_location),
 
 ]
@@ -173,7 +170,7 @@ if __name__ == "__main__":
     assert isinstance(schools_by_size_range(["5000", "6000"]), list), "schools_by_size_range not returning a list"
     assert isinstance(schools_by_location([ "Norman, Oklahoma, USA"]), list), "schools_by_location not returning a list"
     
-     assert sorted(schools_by_year(["1746"])) == sorted(
+    assert sorted(schools_by_year(["1746"])) == sorted(
         ["Princeton University"]
     ), "failed schools_by_year test"
     assert sorted(schools_by_year_range(["1770", "1850"])) == sorted(
