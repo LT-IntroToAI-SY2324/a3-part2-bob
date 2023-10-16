@@ -173,6 +173,25 @@ if __name__ == "__main__":
     assert isinstance(schools_by_size_range(["5000", "6000"]), list), "schools_by_size_range not returning a list"
     assert isinstance(schools_by_location([ "Norman, Oklahoma, USA"]), list), "schools_by_location not returning a list"
     
+     assert sorted(schools_by_year(["1746"])) == sorted(
+        ["Princeton University"]
+    ), "failed schools_by_year test"
+    assert sorted(schools_by_year_range(["1770", "1850"])) == sorted(
+        ["University of Michigan","University of Wisconsin-Madison","Indiana University Bloomington","University of Iowa","University of South Carolina","University of Utah","University of Vermont","University of Mississippi (Ole Miss)" ]
+    ), "failed schools_by_year_range test"
+    assert sorted(schools_by_year_before(["1800"])) == sorted(
+        ["Harvard University","Yale University", "Princeton University","Columbia University","University of Pennsylvania","Brown University","Dartmouth College","University of North Carolina at Chapel Hill","University of Tennessee, Knoxville","University of Vermont"]
+    ), "failed schools_by_year_before test"
+    assert sorted(schools_by_year_after(["1900"])) == sorted(
+        ["University of California, Los Angeles (UCLA)","University of California, San Diego (UCSD)", "University of California, Davis (UC Davis)", "University of Maryland, Baltimore County (UMBC)","Boise State University", "University of Nevada, Las Vegas (UNLV)"]
+    ), "failed schools_by_year_after test"
+    assert sorted(schools_by_rate_higher(["20.5"])) == sorted(
+        ["University of Michigan","University of Texas at Austin","University of Florida","University of Washington", "University of North Carolina at Chapel Hill","University of Virginia","University of Wisconsin-Madison","University of California, San Diego (UCSD)", "University of California, Davis (UC Davis)","University of Maryland, Baltimore County (UMBC)","University of Oregon","Indiana University Bloomington","University of Iowa","University of Kansas","University of Kentucky","University of New Mexico","University of Oklahoma","University of South Carolina","University of Tennessee, Knoxville", "University of Utah", "University of Vermont","University of Wyoming","Auburn University","Boise State University","University of Arkansas","Louisiana State University (LSU)","University of Nevada, Las Vegas (UNLV)","University of Mississippi (Ole Miss)"]
+    ), "failed schools_by_rate_higher test"
+    assert sorted(schools_by_rate_lower(["10"])) == sorted(
+        ["Harvard University","Yale University","Princeton University","Columbia University","University of Pennsylvania","Brown University","Dartmouth College","Massachusetts Institute of Technology (MIT)","Stanford University","University of Chicago",]
+    ), "failed schools_by_rate_lower test"
+    
     assert sorted (search_pa_list(["what", "schools", "have", "acceptance", "rates", "between", "10", "and","12"])) == sorted(
         [ "Cornell University", "University of California, Berkely"]
     ), "failed search_pa_list test 7"
